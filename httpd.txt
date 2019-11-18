@@ -1,0 +1,5 @@
+启动apache服务器 systemctl start httpd
+关闭apache服务器 systemctl stop httpd
+设置开机自动启动 systemctl enable httpd
+检查httpd服务状态 systemctl status httpd.service
+/etc/httpd/conf/httpd.conf

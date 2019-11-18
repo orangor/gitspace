@@ -1,0 +1,43 @@
+./send_log -etcd http://etcdcluster.in.netwa.cn:2379
+mysql -uroot -pYunwa2018-03-10 -h test_db
+ db, err := gorm.Open("mysql", "root:Yunwa2018-03-10@(test_db:3306)/logic?charset=utf8&parseTime=True&loc=Local") 
+
+
+数据库：
+数据以表格的形式出现
+每行为各种记录名称
+每列为记录名称所对应的数据域
+许多行和列组成一张表单
+若干的表单组成database
+
+SQL术语
+数据库：关联表的集合
+数据表：数据的矩阵，在数据库中的表看起来像一个简单的电子表格
+列：一列（数据元素）包含了相同的数据
+行：一行（=元组，或记录）是一组相关的数据
+冗余：储存两倍数据，冗余降低了性能，但提高了数据的安全性
+主键：主键是唯一的，一个数据表中只能包含一个主键。可以使用主键来查询数据。
+外键：外键用于关联两个表
+复合键：复合键（组合键）将多个列作为一个索引键，一般用于复合索引。
+索引：使用索引可加快访问数据表中的特定信息。索引是对数据库表中一列或多列的值进行排序得的一种结构。
+参照完整性：参照完整性要求关系中不允许引用不存在的实体。与完整性是关系模型必须满足的完整约束条件，目的是保证数据的一致性。
+
+select * from tables  where **
+修改
+update table set* where **    ----| UPDATE
+delete from table where **    ----| DELETE
+查询
+select * from table  where   * Like  "%varchar"/int ----| LIKE
+UNION 取交集
+UNION ALL 取全集
+select * from  table  ORDER BY * ASC/DESC  ----| ORDER BY
+select *,COUNT(*) from table GROUP BY *    ----| COUNT GROUP BY
+select COALESCE(name,'总数'),SUM(value)  AS value_name from employee_tbl GROUP BY name WITH ROLLUP --| COALESCE(),SUM() AS GROUP BY WITH ROLLUP
+
+navicate 注册码
+名,组织,注册码：
+NAVN-LNXG-XHHX-5NOO
+NAVH-WK6A-DMVK-DKW3
+  
+
+

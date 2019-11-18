@@ -1,0 +1,40 @@
+http://106.14.227.127:8000/
+yunwa
+yunWa@c2-4
+./send_log -etcd http://etcdcluster.in.netwa.cn:2379
+ go build
+
+
+
+{
+    "LogConfig":{
+		"LogDir":"./log",
+		"LogFile":"send_log.log",
+		"LogLevel":"DEBUG",
+		"LogFormat":"%{color}%{level:.3s}:%{time:2006-01-02 15:04:05.000}[%{id:03x}][%{goroutineid}/%{goroutinecount}] %{shortfile}%{color:reset} %{message}",
+		"ProcessName":"send_log"
+	},
+	"LogicDb":{
+		"MysqlConn":"root:Yunwa2018-03-10@tcp(test_db.in.netwa.cn:3306)/logic?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai",
+		"MysqlConnectPoolSize":10
+	},
+"E_Mall":{
+	"User":"public@netwa.cn"
+	"Passwd":"Yunwa#2018"
+	"Server":"smtp.exmail.qq.com"
+	"RecvList":
+	"SendUser":"orange"
+	"Subject":"takeout_cash"
+	
+	},
+}
+
+
+
+
+public@netwa.cn
+Yunwa#2018
+smtp.exmail.qq.com
+liujun@netwa.cn
+
+etcd.GConfig.LogMail  

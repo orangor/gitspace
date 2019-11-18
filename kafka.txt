@@ -1,0 +1,37 @@
+kafka-console-producer.sh --broker-list 192.168.0.152:9092 --topic topic_user
+
+Databases  auth.user;	
+
+consumer,err :=clu
+
+        UserID     string        `json:"uid"`
+	RoomID     string        `json:"room_id"`
+	RoomType   int64         `json:"room_type"`
+	Operation  UserOperation `json:"oper"`
+	Question   int64         `json:"question"`
+	Answer     string        `json:"answer"`
+	UserPick   string        `json:"user_pick"`
+	AnswerTime time.Time     `json:"answer_time"`
+
+消息模型的两种
+队列：
+消费者<---------->服务器(一条消息只有其中一个消费者处理)
+发布-订阅式：
+消费者<---------->服务器(消息被广播给所有消费者，接收者都可处理）
+消费者抽象模型：（kafka为这两种模型所提供）
+消费者组（有Kafka提供，消费者有一个消费者组标记自己）
+
+
+《消息--发布==>Topic--分发==>消费者组一消费者》-----队列/（假如所有消费者都在不同的组中）发布-订阅式
+ 
+  
+分区 ---每个分区都是一个顺序的，不可变得消息队列并且可以持续的添加
+分区的消息--都被分配一个唯一序列号（偏移量）offset
+kafka集群保持所有消息到过期
+消费者数据-----仅有元数据（偏移量），消费在log这个位置(偏移量右消费者控制)
+消费者消费消息的时候，偏移量也线性增加，消费者可以将偏移量重置为一个更老的偏移量，重新读取消息。
+
+
+
+
+
