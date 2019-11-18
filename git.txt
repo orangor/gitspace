@@ -1,0 +1,58 @@
+yum install git
+git config --global user.name "orange"
+git config --global user.email"1176902141@qq.com"
+git config --list
+git init
+
+useradd git
+passwd git
+ssh-keygen -t rsa -C "your_email@youremail.com //生成git ssh key
+SHA256:O/W0lb2hoFm6gBUBxbdwYdY+pfdSqlxsgh2j1bKkcRA 1176902141@qq.com
+
+SHA256:+lHfW2lPxG2aqQ60R1HU/JXj7k9nvGIq5kQKhzoxqrs 3441602787@qq.com 香港服务器
+cd ~/.ssh/
+cat id_rsa.pub
+   git status
+   git add single_check/
+   git commit -m 'add single check'
+   git config --global user.email "3441602787@qq.com"
+   git config --global user.name "orangeor"
+   git commit -m 'add single check'
+   git push
+
+   git status
+   git add ../logic/single_level.go
+   git commit -m "ss"
+   git push
+
+git add .
+git add --all .
+git commit -m "say"
+git push
+
+
+
+adduser git       #添加用户git
+  3 passwd git        #更改git的密码
+  4 #然后按照提示连输2次密码
+  5 vi /etc/passwd         #找到第6行，换为第7行
+  6 git:x:1001:1001::/home/git:/bin/bash
+  7 git:x:1001:1001::/home/git:/usr/local/git/bin/git-shell
+  8 cd /home/git/
+  9 mkdir .ssh
+ 10 chmod 755 .ssh
+ 11 touch .ssh/authorized_keys
+ 12 chmod 644 .ssh/authorized_keys
+ 13 
+ 14 cd /home
+ 15 mkdir mycode
+ 16 chown git mycode/                    #更改所属用户
+ 17 cd mycode
+ 18 git init --bare test.git             #初始化仓库
+ 19 chown -R git test.git                #更改所属用户
+ 
+20 
+ 21 git clone git@127.0.0.1:/home/mycode/test.git
+  git clone orange@134.175.42.55:/home/data/box.git
+ 22 #127.0.0.1应当更换为你的服务器IP地址
+
